@@ -1,4 +1,4 @@
-q<?php
+<?php
 /*
 	This is a sample local-config.php file
 	It must include the database config and salts
