@@ -1,4 +1,4 @@
-<?php
+q<?php
 /*
 	This is a sample local-config.php file
 	It must include the database config and salts
@@ -12,6 +12,8 @@ define( 'DB_NAME', '@DB_NAME@' );
 define( 'DB_USER', '@DB_USER@' );
 define( 'DB_PASSWORD', '@DB_PASSWORD@' );
 define( 'DB_HOST', '@DB_HOST@' );
+
+$table_prefix  = '@DB_PREFIX@';
 
 /*
 	Salts. Get them from https://api.wordpress.org/secret-key/1.1/salt

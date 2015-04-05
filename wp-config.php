@@ -10,9 +10,6 @@ if ( file_exists( dirname( __FILE__ ) . '/local-config.php' ) ) {
 	die ("Local config file is missing.");
 }
 
-// But keep the database prefix constant
-$table_prefix  = '@DB_PREFIX@';
-
 /*
 	Setup the custom content directory
 */
