@@ -1,3 +1,6 @@
 [submodule "wp"]
 	path = wp
 	url = git://github.com/WordPress/WordPress.git
+[submodule "content/mu-plugins/custom-meta-boxes"]
+	path = content/mu-plugins/custom-meta-boxes
+	url = https://github.com/humanmade/Custom-Meta-Boxes
