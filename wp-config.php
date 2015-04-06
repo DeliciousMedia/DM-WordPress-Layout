@@ -11,8 +11,11 @@ if ( file_exists( dirname( __FILE__ ) . '/local-config.php' ) ) {
 }
 
 /*
-	Setup the custom content directory
+	Setup URLS and the custom content directory
 */
+
+define('WP_SITEURL', 'http://' . $_SERVER['SERVER_NAME'] . '/wp');
+define('WP_HOME', 'http://' . $_SERVER['SERVER_NAME']);
 
 define( 'WP_CONTENT_DIR', dirname( __FILE__ ) . '/content' );
 define( 'WP_CONTENT_URL', 'http://' . $_SERVER['HTTP_HOST'] . '/content' );
@@ -54,7 +57,6 @@ if ( file_exists( dirname( __FILE__ ) . '/memcached.php' ) )
 /*
 	Load WordPress
 */
-
 
 if ( !defined( 'ABSPATH' ) )
 	define( 'ABSPATH', dirname( __FILE__ ) . '/wp/' );
