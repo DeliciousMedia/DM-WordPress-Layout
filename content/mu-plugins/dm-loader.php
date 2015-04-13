@@ -1,3 +1,4 @@
+<?php
 /*
 Plugin Name: DM Plugin & Library Loader
 Description: Loads required plugins and libraries.
