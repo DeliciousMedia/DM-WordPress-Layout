@@ -29,13 +29,6 @@ define( 'DB_COLLATE', '' );
 define( 'WPLANG', '' );
 
 /*
-	Disable file editing & plugin installation via UI
-*/
-
-define( 'DISALLOW_FILE_EDIT', true );
-define( 'DISALLOW_FILE_MODS', true );
-
-/*
 	If we're in a development environment, enable debugging.
 	If not, hide errors.
 */

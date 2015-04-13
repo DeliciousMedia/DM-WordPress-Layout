@@ -29,6 +29,13 @@ define( 'LOGGED_IN_SALT', '@SALT7@' );
 define( 'NONCE_SALT', '@SALT8@' );
 
 /*
+	Disable file editing & plugin installation via UI
+*/
+
+define( 'DISALLOW_FILE_EDIT', true );
+define( 'DISALLOW_FILE_MODS', true );
+
+/*
 	Enable development stuff. Comment out on live sites.
 */
 
