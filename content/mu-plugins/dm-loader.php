@@ -42,7 +42,7 @@ add_action( 'pre_current_active_plugins', function () use ( $dm_plugins ) {
 		uasort( $wp_list_table->items, array( $wp_list_table, '_order_callback' ) );
 	}
 	// Remove register-theme-directory.php from the list.
-	if (isset($wp_list_table->items['register-theme-directory.php'])) unset ($wp_list_table->items['register-theme-directory.php']);
+
 	// Force showing all plugins
 	// See https://core.trac.wordpress.org/ticket/27110
 	$plugins_per_page = $total_this_page;
