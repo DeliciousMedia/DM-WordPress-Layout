@@ -29,14 +29,21 @@ define( 'LOGGED_IN_SALT', '@SALT7@' );
 define( 'NONCE_SALT', '@SALT8@' );
 
 /*
+	Environment settings
+	Choose from DEV/STAGE/LIVE
+*/
+
+define('DM_ENVIRONMENT', 'DEV');
+
+/*
 	Disable file editing & plugin installation via UI
 */
 
-define( 'DISALLOW_FILE_EDIT', true );
-define( 'DISALLOW_FILE_MODS', true );
+//define( 'DISALLOW_FILE_EDIT', true );
+//define( 'DISALLOW_FILE_MODS', true );
 
 /*
-	Enable development stuff. Comment out on live sites.
+	Enable caching
 */
 
-define('DM_DEV',true);
+//define( 'WP_CACHE', true );
