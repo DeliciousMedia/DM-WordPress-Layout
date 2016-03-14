@@ -1,7 +1,7 @@
 <?php
 
 /*
-	Always load the database credentials & salts from a seperate file outside.
+	Always load the database credentials & salts from a seperate file.
 */
 
 if ( file_exists( dirname( __FILE__ ) . '/local-config.php' ) ) {
@@ -13,12 +13,17 @@ if ( file_exists( dirname( __FILE__ ) . '/local-config.php' ) ) {
 /*
 	Setup URLS and the custom content directory
 */
+if (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') {
+    $dm_protocol="https://";
+} else {
+	$dm_protocol="http://";
+}
 
-define('WP_SITEURL', 'http://' . $_SERVER['SERVER_NAME'] . '/wp');
-define('WP_HOME', 'http://' . $_SERVER['SERVER_NAME']);
+define('WP_SITEURL', $dm_protocol . $_SERVER['SERVER_NAME'] . '/wp');
+define('WP_HOME', $dm_protocol . $_SERVER['SERVER_NAME']);
 
 define( 'WP_CONTENT_DIR', dirname( __FILE__ ) . '/content' );
-define( 'WP_CONTENT_URL', 'http://' . $_SERVER['HTTP_HOST'] . '/content' );
+define( 'WP_CONTENT_URL', $dm_protocol . $_SERVER['HTTP_HOST'] . '/content' );
 
 /*
 	Other settings
@@ -33,7 +38,7 @@ define( 'WPLANG', '' );
 	If not, hide errors.
 */
 
-if (defined('DM_DEV')) {
+if (DM_ENVIRONMENT === "DEV") {
 	define( 'SAVEQUERIES', true );
 	define( 'WP_DEBUG', true );
 } else {
