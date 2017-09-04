@@ -19,14 +19,14 @@ $table_prefix  = '@DB_PREFIX@';
 	Salts. Get them from https://api.wordpress.org/secret-key/1.1/salt
 */
 
-define( 'AUTH_KEY', '@SALT1@' );
-define( 'SECURE_AUTH_KEY', '@SALT2@' );
-define( 'LOGGED_IN_KEY', '@SALT3@' );
-define( 'NONCE_KEY', '@SALT4@' );
-define( 'AUTH_SALT', '@SALT5@' );
-define( 'SECURE_AUTH_SALT', '@SALT6@' );
-define( 'LOGGED_IN_SALT', '@SALT7@' );
-define( 'NONCE_SALT', '@SALT8@' );
+define( 'AUTH_KEY', '@SALT_PLACEHOLDER@' );
+define( 'SECURE_AUTH_KEY', '@SALT_PLACEHOLDER@' );
+define( 'LOGGED_IN_KEY', '@SALT_PLACEHOLDER@' );
+define( 'NONCE_KEY', '@SALT_PLACEHOLDER@' );
+define( 'AUTH_SALT', '@SALT_PLACEHOLDER@' );
+define( 'SECURE_AUTH_SALT', '@SALT_PLACEHOLDER@' );
+define( 'LOGGED_IN_SALT', '@SALT_PLACEHOLDER@' );
+define( 'NONCE_SALT', '@SALT_PLACEHOLDER@' );
 
 /*
 	Environment settings
