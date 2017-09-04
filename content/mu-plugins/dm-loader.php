@@ -11,7 +11,7 @@ if ( ( defined( 'WP_INSTALLING' ) && WP_INSTALLING ) )
 	return;
 
 $dm_plugins = array(
-	'custom-meta-boxes/custom-meta-boxes.php',
+//	'custom-meta-boxes/custom-meta-boxes.php',
 );
 
 foreach ( $dm_plugins as $dm_plugin ) {
