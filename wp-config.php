@@ -1,49 +1,50 @@
 <?php
 
-/*
-	Always load the database credentials & salts from a seperate file.
-*/
-
+/**
+ * Always load the database credentials & salts from a seperate file.
+ */
 if ( file_exists( dirname( __FILE__ ) . '/local-config.php' ) ) {
 	include( dirname( __FILE__ ) . '/local-config.php' );
 } else {
-	die ("Local config file is missing.");
+	die ( 'Local config file is missing.' );
 }
 
-/*
-	Setup URLS and the custom content directory
-*/
-if (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') {
-    $dm_protocol="https://";
+/**
+ * Setup URLS and the custom content directory.
+ */
+if ( ! empty( $_SERVER['HTTPS'] ) && $_SERVER['HTTPS'] != 'off' ) {
+    $dm_protocol = 'https://';
 } else {
-	$dm_protocol="http://";
+	$dm_protocol = 'http://';
 }
 
-define('WP_SITEURL', $dm_protocol . $_SERVER['SERVER_NAME'] . '/wp');
-define('WP_HOME', $dm_protocol . $_SERVER['SERVER_NAME']);
+define( 'WP_SITEURL', $dm_protocol . $_SERVER['SERVER_NAME'] . '/wp' );
+define( 'WP_HOME', $dm_protocol . $_SERVER['SERVER_NAME'] );
 
 define( 'WP_CONTENT_DIR', dirname( __FILE__ ) . '/content' );
 define( 'WP_CONTENT_URL', $dm_protocol . $_SERVER['HTTP_HOST'] . '/content' );
 
-/*
-	Other settings
-*/
+/**
+ * Other settings.
+ */
 
 define( 'DB_CHARSET', 'utf8' );
 define( 'DB_COLLATE', '' );
 define( 'WPLANG', '' );
 
-/*
-	If we're in a development environment, enable debugging.
-	If not, hide errors.
-*/
 
-if (DM_ENVIRONMENT === "DEV") {
+/**
+ * If we're in a development environment, enable debugging.
+ * If not, hide errors and disable file/plugin modifications.
+ */
+if ( 'DEV' === DM_ENVIRONMENT ) {
 	define( 'SAVEQUERIES', true );
 	define( 'WP_DEBUG', true );
 } else {
 	ini_set( 'display_errors', 0 );
 	define( 'WP_DEBUG_DISPLAY', false );
+	define( 'DISALLOW_FILE_EDIT', true );
+	define( 'DISALLOW_FILE_MODS', true );
 }
 
 /*
@@ -56,6 +57,6 @@ if ( file_exists( dirname( __FILE__ ) . '/memcached.php' ) )
 	Load WordPress
 */
 
-if ( !defined( 'ABSPATH' ) )
+if ( ! defined( 'ABSPATH' ) )
 	define( 'ABSPATH', dirname( __FILE__ ) . '/wp/' );
 require_once( ABSPATH . 'wp-settings.php' );
