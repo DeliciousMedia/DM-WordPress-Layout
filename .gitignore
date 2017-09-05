@@ -1,7 +1,7 @@
 /wp
 /shared
 /local-config.php
-/*.sql
-/db-sync
 /content/upgrade/
+/content/languages/
+/*.sql
 .DS_Store
