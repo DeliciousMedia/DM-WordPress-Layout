@@ -1,8 +1,8 @@
 <?php
-/*
-	This is a sample local-config.php file
-	It must include the database config and salts
-*/
+/**
+ * This is a sample local-config.php file.
+ * It must include the database config, salts and DM_ENVIRONMENT constant.
+ */
 
 /**
  * Database configuration

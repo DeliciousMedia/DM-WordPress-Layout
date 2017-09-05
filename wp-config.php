@@ -1,33 +1,26 @@
 <?php
+/**
+ * DM wp-config.php
+ */
 
 /**
  * Always load the database credentials & salts from a seperate file.
  */
-if ( file_exists( dirname( __FILE__ ) . '/local-config.php' ) ) {
-	include( dirname( __FILE__ ) . '/local-config.php' );
-} else {
-	die ( 'Local config file is missing.' );
-}
+if ( ! file_exists( dirname( __FILE__ ) . '/local-config.php' ) ) die ( 'Local config file is missing.' );
+include( dirname( __FILE__ ) . '/local-config.php' );
 
 /**
  * Setup URLS and the custom content directory.
  */
-if ( ! empty( $_SERVER['HTTPS'] ) && $_SERVER['HTTPS'] != 'off' ) {
-    $dm_protocol = 'https://';
-} else {
-	$dm_protocol = 'http://';
-}
-
+$dm_protocol = ( ! empty( $_SERVER['HTTPS'] ) && $_SERVER['HTTPS'] != 'off' ) ? 'https://' : 'http://';
 define( 'WP_SITEURL', $dm_protocol . $_SERVER['SERVER_NAME'] . '/wp' );
 define( 'WP_HOME', $dm_protocol . $_SERVER['SERVER_NAME'] );
-
 define( 'WP_CONTENT_DIR', dirname( __FILE__ ) . '/content' );
 define( 'WP_CONTENT_URL', $dm_protocol . $_SERVER['HTTP_HOST'] . '/content' );
 
 /**
  * Other settings.
  */
-
 define( 'DB_CHARSET', 'utf8' );
 define( 'DB_COLLATE', '' );
 define( 'WPLANG', '' );
