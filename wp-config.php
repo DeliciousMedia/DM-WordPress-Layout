@@ -47,16 +47,15 @@ if ( 'DEV' === DM_ENVIRONMENT ) {
 	define( 'DISALLOW_FILE_MODS', true );
 }
 
-/*
-	Load memcached settings, if they are there.
-*/
+/**
+ * Load memcached settings, if they are there.
+ */
 if ( file_exists( dirname( __FILE__ ) . '/memcached.php' ) )
 	$memcached_servers = include( dirname( __FILE__ ) . '/memcached.php' );
 
-/*
-	Load WordPress
-*/
-
+/**
+ * Load WordPress.
+ */
 if ( ! defined( 'ABSPATH' ) )
 	define( 'ABSPATH', dirname( __FILE__ ) . '/wp/' );
 require_once( ABSPATH . 'wp-settings.php' );
