@@ -6,7 +6,7 @@
 /**
  * Always load the database credentials & salts from a seperate file.
  */
-if ( ! file_exists( dirname( __FILE__ ) . '/local-config.php' ) ) die ( 'Local config file is missing.' );
+if ( ! file_exists( dirname( __FILE__ ) . '/local-config.php' ) ) die( 'Local config file is missing.' );
 include( dirname( __FILE__ ) . '/local-config.php' );
 
 /**
@@ -25,6 +25,10 @@ define( 'DB_CHARSET', 'utf8' );
 define( 'DB_COLLATE', '' );
 define( 'WPLANG', '' );
 
+/**
+ * Set some defaults, which we may override in local-config.php
+ */
+defined( 'WP_POST_REVISIONS' ) || define( 'WP_POST_REVISIONS', 50 ) ;
 
 /**
  * If we're in a development environment, enable debugging.
