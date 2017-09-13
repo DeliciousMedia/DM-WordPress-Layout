@@ -8,26 +8,39 @@
  */
 
 // Default to unknown if no environment is set.
-defined ( 'DM_ENVIRONMENT' ) || define ( 'DM_ENVIRONMENT', 'UNKNOWN' );
+defined( 'DM_ENVIRONMENT' ) || define( 'DM_ENVIRONMENT', 'UNKNOWN' );
 
-// Add node into admin bar.
+/**
+ * Add node to WordPress Admin Bar
+ *
+ * @param  object $wp_admin_bar WordPress Admin Bar object.
+ * @return void
+ */
 function dmei_add_adminbar_node( $wp_admin_bar ) {
-	$wp_admin_bar->add_node( [
-		'title'  => esc_html( strtoupper( DM_ENVIRONMENT ) ),
-		'id'     => 'dmei',
-		'parent' => 'top-secondary',
-		'meta'   => [
-			'class' => 'dmei',
-		],
-	] );
+	$wp_admin_bar->add_node(
+		[
+			'title'  => esc_html( strtoupper( DM_ENVIRONMENT ) ),
+			'id'     => 'dmei',
+			'parent' => 'top-secondary',
+			'meta'   => [
+				'class' => 'dmei',
+			],
+		]
+	);
 }
 add_action( 'admin_bar_menu', 'dmei_add_adminbar_node', 1 );
 
-// Insert CSS into head.
+/**
+ * Inline CSS.
+ *
+ * @return void
+ */
 function dmei_insert_css() {
 
 	// Don't insert CSS if we're not logged in.
-	if ( ! is_user_logged_in() ) return;
+	if ( ! is_user_logged_in() ) {
+		return;
+	}
 
 	switch ( strtoupper( DM_ENVIRONMENT ) ) {
 

@@ -33,5 +33,5 @@ define( 'NONCE_SALT', '@SALT_PLACEHOLDER@' );
  * Usual values are: DEV/STAGE/LIVE
  */
 
-define('DM_ENVIRONMENT', 'DEV');
+define( 'DM_ENVIRONMENT', 'DEV' );
 
