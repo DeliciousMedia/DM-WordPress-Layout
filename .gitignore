@@ -1,7 +1,9 @@
 /wp
 /shared
 /local-config.php
-/*.sql
 /content/upgrade/
 /content/languages/
 .DS_Store
+.sass-cache
+*.css.map
+/*.sql
