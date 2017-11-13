@@ -3,6 +3,7 @@
 /local-config.php
 /content/upgrade/
 /content/languages/
+/content/themes/*/assets
 .DS_Store
 .sass-cache
 *.css.map
