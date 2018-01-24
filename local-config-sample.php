@@ -1,6 +1,6 @@
 <?php
 /**
- * This is a sample local-config.php file.
+ * This file contains the environment specific elements from wp-config.php.
  * It must include the database config, salts and DM_ENVIRONMENT constant.
  */
 
@@ -14,7 +14,6 @@ define( 'DB_PASSWORD', '@DB_PASSWORD@' );
 define( 'DB_HOST', '@DB_HOST@' );
 
 $table_prefix  = '@DB_PREFIX@';
-
 
 /**
  * Salts; auto-populated on dev; replace for each environment from https://api.wordpress.org/secret-key/1.1/salt/
