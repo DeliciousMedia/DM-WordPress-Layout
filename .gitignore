@@ -9,3 +9,4 @@
 *.css.map
 /*.sql
 node_modules
+/vendor
