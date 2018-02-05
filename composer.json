@@ -63,6 +63,7 @@
     "deliciousmedia/dm-customisations": "dev-master",
     "cmb2/cmb2": "dev-master",
     "johnbillion/extended-cpts": "dev-master",
+    "wordpress-muplugin/password-bcrypt": "^1.0",
     "wordpress-plugin/mailgun": "1.5.8.5"
    },
   "extra": {
