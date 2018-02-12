@@ -20,17 +20,18 @@
 if ( class_exists( 'CWS_Disable_Plugins' ) ) {
 
 	// Plugins to be disabled on development but enabled on staging/production (e.g. transactional SMTP provider).
+	$live_staging_only = [ 'mailgun/mailgun.php' ];
 	if ( defined( 'DM_ENVIRONMENT' ) && 'DEV' == DM_ENVIRONMENT ) {
-		new CWS_Disable_Plugins( [ 'mailgun/mailgun.php' ], 'Disabled on development' );
+		new CWS_Disable_Plugins( $live_staging_only, 'Disabled on development' );
 	} else {
-		new CWS_Enable_Plugins( [ 'mailgun/mailgun.php' ], 'Required on production & staging' );
+		new CWS_Enable_Plugins( $live_staging_only, 'Required on production & staging' );
 	}
 
 	// Stuff that is only required on live, but should be disabled elsewhere (e.g. tracking codes etc).
-	$dm_plugins_live_only = [];
+	$live_only = [];
 	if ( defined( 'DM_ENVIRONMENT' ) && 'LIVE' == DM_ENVIRONMENT ) {
-		new CWS_Enable_Plugins( $dm_plugins_live_only, 'Required on production' );
+		new CWS_Enable_Plugins( $live_only, 'Required on production' );
 	} else {
-		new CWS_Disable_Plugins( $dm_plugins_live_only, 'Disabled on development & staging' );
+		new CWS_Disable_Plugins( $live_only, 'Disabled on development & staging' );
 	}
 }
