@@ -15,12 +15,19 @@ if ( ! file_exists( dirname( __FILE__ ) . '/local-config.php' ) ) {
 include( dirname( __FILE__ ) . '/local-config.php' );
 
 /**
- * Setup URLS and the custom content directory.
+ * Prevent errors when using WP CLI
  */
 if ( ! isset( $_SERVER['HTTP_HOST'] ) ) {
-	$_SERVER['HTTP_HOST'] = ''; // Prevent wp-cli complaining about missing host.
+	$_SERVER['HTTP_HOST'] = '';
 }
 
+if ( ! isset( $_SERVER['SERVER_NAME'] ) ) {
+	$_SERVER['SERVER_NAME'] = '';
+}
+
+/**
+ * Setup URLS and the custom content directory.
+ */
 $dm_protocol = ( ! empty( $_SERVER['HTTPS'] ) && 'off' != $_SERVER['HTTPS'] ) ? 'https://' : 'http://';
 define( 'WP_SITEURL', $dm_protocol . $_SERVER['SERVER_NAME'] . '/wp' );
 define( 'WP_HOME', $dm_protocol . $_SERVER['SERVER_NAME'] );
