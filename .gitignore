@@ -1,12 +1,24 @@
+# Ignore WordPress, local config, content.
 /wp
-/shared
 /local-config.php
+/shared/content/uploads
 /content/upgrade/
 /content/languages/
-/content/themes/*/assets
-.DS_Store
-.sass-cache
-*.css.map
 /*.sql
+.DS_Store
+
+# Ignore node/composer files
 node_modules
 /vendor
+
+# Don't include compiled/optimised assets, we store the /src versions.
+/content/themes/*/assets
+*.css.map
+.sass-cache
+
+# Ignore plugins & mu plugins by default as the should usually be
+# brought in via  composer, but add any other exceptions here.
+/content/plugins/*
+/content/mu-plugins/*
+!/content/mu-plugins/dm-muloader.php
+!/content/mu-plugins/site-config/
