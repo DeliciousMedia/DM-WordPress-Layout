@@ -1,86 +1,108 @@
 {
-  "repositories": {
-    "cmb2/cmb2": {
-      "type": "package",
-      "package": {
-        "name": "cmb2/cmb2",
-        "type": "wordpress-muplugin",
-        "version": "dev-master",
-        "source": {
-          "type": "git",
-          "url": "https://github.com/CMB2/CMB2.git",
-          "reference": "master"
-        }
-      }
-    },
-    "johnbillion/extended-cpts": {
-      "type": "package",
-      "package": {
-        "name": "johnbillion/extended-cpts",
-        "type": "wordpress-muplugin",
-        "version": "dev-master",
-        "source": {
-          "type": "git",
-          "url": "https://github.com/johnbillion/extended-cpts.git",
-          "reference": "master"
-        }
-      }
-    },
-    "deliciousmedia/plugin-control": {
-      "type": "package",
-      "package": {
-        "name": "deliciousmedia/plugin-control",
-        "type": "wordpress-muplugin",
-        "version": "dev-master",
-        "source": {
-          "type": "git",
-          "url": "https://github.com/deliciousmedia/plugin-control.git",
-          "reference": "master"
-        }
-      }
-    },
-    "deliciousmedia/dm-customisations": {
-      "type": "package",
-      "package": {
-        "name": "deliciousmedia/dm-customisations",
-        "type": "wordpress-muplugin",
-        "version": "dev-master",
-        "source": {
-          "type": "git",
-          "url": "https://github.com/deliciousmedia/dm-customisations.git",
-          "reference": "master"
-        }
-      }
-    }
-  },
-  "require": {
-    "php": ">=7.0",
-    "composer/installers": ">=1.0.6",
-    "davidbarratt/custom-installer": " 1.0.*@dev",
-    "deliciousmedia/dm-ei": "dev-master",
-    "deliciousmedia/dm-muloader": "dev-master",
-    "deliciousmedia/plugin-control": "dev-master",
-    "deliciousmedia/dm-customisations": "dev-master",
-    "cmb2/cmb2": "dev-master",
-    "johnbillion/extended-cpts": "dev-master",
-    "wordpress-muplugin/password-bcrypt": "^1.0",
-    "wordpress-plugin/mailgun": "1.5.8.5"
-   },
-  "extra": {
-      "installer-paths": {
-      "content/plugins/{$name}/": ["type:wordpress-plugin"],
-      "content/mu-plugins/{$name}/": ["type:wordpress-muplugin"]
-    },
-    "composer-wp": {
-        "path-mapping": {
-             "wordpress-plugin": "content/plugins",
-             "wordpress-muplugin": "content/mu-plugins"
+    "repositories":
+    {
+        "johnbillion/extended-cpts":
+        {
+            "type": "package",
+            "package":
+            {
+                "name": "johnbillion/extended-cpts",
+                "type": "wordpress-muplugin",
+                "version": "dev-master",
+                "source":
+                {
+                    "type": "git",
+                    "url": "https://github.com/johnbillion/extended-cpts.git",
+                    "reference": "master"
+                }
+            }
         },
-        "mu-plugin-autoloader": false,
-        "repositories": [{
-            "themes": false,
-            "wpcom-themes": false
-        }]
+        "deliciousmedia/plugin-control":
+        {
+            "type": "package",
+            "package":
+            {
+                "name": "deliciousmedia/plugin-control",
+                "type": "wordpress-muplugin",
+                "version": "dev-master",
+                "source":
+                {
+                    "type": "git",
+                    "url": "https://github.com/deliciousmedia/plugin-control.git",
+                    "reference": "master"
+                }
+            }
+        },
+        "deliciousmedia/dm-customisations":
+        {
+            "type": "package",
+            "package":
+            {
+                "name": "deliciousmedia/dm-customisations",
+                "type": "wordpress-muplugin",
+                "version": "dev-master",
+                "source":
+                {
+                    "type": "git",
+                    "url": "https://github.com/deliciousmedia/dm-customisations.git",
+                    "reference": "master"
+                }
+            }
+        },
+        "acf-pro-installer":
+        {
+            "type": "package",
+            "package":
+            {
+                "name": "advanced-custom-fields/advanced-custom-fields-pro",
+                "version": "5.8.5",
+                "type": "wordpress-plugin",
+                "dist":
+                {
+                    "type": "zip",
+                    "url": "https://connect.advancedcustomfields.com/index.php?p=pro&a=download"
+                },
+                "require":
+                {
+                    "philippbaschke/acf-pro-installer": "^1.0"
+                }
+            }
+        }
+    },
+    "require":
+    {
+        "php": ">=7.0",
+        "composer/installers": ">=1.0.6",
+        "davidbarratt/custom-installer": " 1.0.*@dev",
+        "deliciousmedia/dm-ei": "dev-master",
+        "deliciousmedia/dm-muloader": "dev-master",
+        "deliciousmedia/plugin-control": "dev-master",
+        "deliciousmedia/dm-customisations": "dev-master",
+        "advanced-custom-fields/advanced-custom-fields-pro": "*",
+        "johnbillion/extended-cpts": "dev-master",
+        "wordpress-muplugin/password-bcrypt": "^1.0",
+        "wordpress-plugin/mailgun": ">=1.7.0"
+    },
+    "extra":
+    {
+        "installer-paths":
+        {
+            "content/plugins/{$name}/": ["type:wordpress-plugin"],
+            "content/mu-plugins/{$name}/": ["type:wordpress-muplugin"]
+        },
+        "composer-wp":
+        {
+            "path-mapping":
+            {
+                "wordpress-plugin": "content/plugins",
+                "wordpress-muplugin": "content/mu-plugins"
+            },
+            "mu-plugin-autoloader": false,
+            "repositories": [
+            {
+                "themes": false,
+                "wpcom-themes": false
+            }]
+        }
     }
-  }
 }
