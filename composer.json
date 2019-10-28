@@ -1,22 +1,6 @@
 {
     "repositories":
     {
-        "cmb2/cmb2":
-        {
-            "type": "package",
-            "package":
-            {
-                "name": "cmb2/cmb2",
-                "type": "wordpress-muplugin",
-                "version": "dev-master",
-                "source":
-                {
-                    "type": "git",
-                    "url": "https://github.com/CMB2/CMB2.git",
-                    "reference": "master"
-                }
-            }
-        },
         "johnbillion/extended-cpts":
         {
             "type": "package",
@@ -64,6 +48,25 @@
                     "reference": "master"
                 }
             }
+        },
+        "acf-pro-installer":
+        {
+            "type": "package",
+            "package":
+            {
+                "name": "advanced-custom-fields/advanced-custom-fields-pro",
+                "version": "5.8.5",
+                "type": "wordpress-plugin",
+                "dist":
+                {
+                    "type": "zip",
+                    "url": "https://connect.advancedcustomfields.com/index.php?p=pro&a=download"
+                },
+                "require":
+                {
+                    "philippbaschke/acf-pro-installer": "^1.0"
+                }
+            }
         }
     },
     "require":
@@ -75,10 +78,10 @@
         "deliciousmedia/dm-muloader": "dev-master",
         "deliciousmedia/plugin-control": "dev-master",
         "deliciousmedia/dm-customisations": "dev-master",
-        "cmb2/cmb2": "dev-master",
+        "advanced-custom-fields/advanced-custom-fields-pro": "*",
         "johnbillion/extended-cpts": "dev-master",
         "wordpress-muplugin/password-bcrypt": "^1.0",
-        "wordpress-plugin/mailgun": "1.5.8.5"
+        "wordpress-plugin/mailgun": ">=1.7.0"
     },
     "extra":
     {
