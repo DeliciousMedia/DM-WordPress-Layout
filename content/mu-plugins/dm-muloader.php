@@ -3,7 +3,7 @@
  * Plugin Name: DM MuLoader
  * Plugin URI: https://github.com/DeliciousMedia/DM-MuLoader
  * Description: Automatically load must use plugins from subfolders.
- * Version: 2.1.0
+ * Version: 2.1.1
  * Author: Delicious Media Limited
  * Author URI: https://www.deliciousmedia.co.uk
  * Text Domain: dm-muloader
@@ -26,7 +26,7 @@ $mumuload_plugin_file = WPMU_PLUGIN_DIR . '/dm-muloader/dm-muloader-plugin.php';
 
 if ( is_file( $mumuload_plugin_file ) ) {
 	require_once $mumuload_plugin_file;
-} else {
+} elseif ( ! defined( 'WP_CLI' ) ) { // Fail silently if we're running via WP CLI.
 	die( 'dm-muloader plugin file is missing.' );
 }
 
