@@ -81,7 +81,8 @@
         "advanced-custom-fields/advanced-custom-fields-pro": "*",
         "johnbillion/extended-cpts": "dev-master",
         "wordpress-muplugin/password-bcrypt": "^1.0",
-        "wordpress-plugin/mailgun": ">=1.7.0"
+        "wordpress-plugin/mailgun": ">=1.7.0",
+        "wordpress-plugin/stream": ">=3.4.2"
     },
     "extra":
     {
