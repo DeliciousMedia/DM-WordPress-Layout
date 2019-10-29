@@ -18,7 +18,7 @@
 if ( class_exists( 'DM_Base_Disable_Plugins' ) ) {
 
 	// Plugins to be disabled on development but enabled on staging/production (e.g. transactional SMTP provider).
-	$live_staging_only = [ 'mailgun/mailgun.php' ];
+	$live_staging_only = [ 'mailgun/mailgun.php', 'stream/stream.php' ];
 	if ( defined( 'DM_ENVIRONMENT' ) && 'DEV' == DM_ENVIRONMENT ) {
 		new DM_Base_Disable_Plugins( $live_staging_only, 'Disabled on development' );
 	} else {
