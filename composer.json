@@ -17,34 +17,18 @@
                 }
             }
         },
-        "deliciousmedia/plugin-control":
+        "deliciousmedia/dm-base":
         {
             "type": "package",
             "package":
             {
-                "name": "deliciousmedia/plugin-control",
+                "name": "deliciousmedia/dm-base",
                 "type": "wordpress-muplugin",
                 "version": "dev-master",
                 "source":
                 {
                     "type": "git",
-                    "url": "https://github.com/deliciousmedia/plugin-control.git",
-                    "reference": "master"
-                }
-            }
-        },
-        "deliciousmedia/dm-customisations":
-        {
-            "type": "package",
-            "package":
-            {
-                "name": "deliciousmedia/dm-customisations",
-                "type": "wordpress-muplugin",
-                "version": "dev-master",
-                "source":
-                {
-                    "type": "git",
-                    "url": "https://github.com/deliciousmedia/dm-customisations.git",
+                    "url": "https://github.com/deliciousmedia/dm-base.git",
                     "reference": "master"
                 }
             }
@@ -55,7 +39,7 @@
             "package":
             {
                 "name": "advanced-custom-fields/advanced-custom-fields-pro",
-                "version": "5.8.5",
+                "version": "5.8.6",
                 "type": "wordpress-plugin",
                 "dist":
                 {
@@ -71,18 +55,16 @@
     },
     "require":
     {
-        "php": ">=7.0",
+        "php": ">=7.3",
         "composer/installers": ">=1.0.6",
         "davidbarratt/custom-installer": " 1.0.*@dev",
-        "deliciousmedia/dm-ei": "dev-master",
-        "deliciousmedia/dm-muloader": "dev-master",
-        "deliciousmedia/plugin-control": "dev-master",
-        "deliciousmedia/dm-customisations": "dev-master",
+        "deliciousmedia/dm-muloader": "@dev",
+        "deliciousmedia/dm-base": "@dev",
         "advanced-custom-fields/advanced-custom-fields-pro": "*",
-        "johnbillion/extended-cpts": "dev-master",
-        "wordpress-muplugin/password-bcrypt": "^1.0",
-        "wordpress-plugin/mailgun": ">=1.7.0",
-        "wordpress-plugin/stream": ">=3.4.2"
+        "johnbillion/extended-cpts": "@dev",
+        "wordpress-muplugin/password-bcrypt": "@dev",
+        "wordpress-plugin/mailgun": "@dev",
+        "wordpress-plugin/stream": "@dev"
     },
     "extra":
     {
