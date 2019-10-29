@@ -26,4 +26,4 @@ define( 'NONCE_SALT', '@SALT_PLACEHOLDER@' );
 define( 'DM_ENVIRONMENT', 'DEV' );
 
 /* Location for application logs */
-define( 'DM_LOGPATH', '@LOG_PATH@' );
+define( 'DM_LOGPATH', '@LOG_PATH@/app_logs' );
