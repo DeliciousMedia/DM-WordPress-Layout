@@ -55,7 +55,7 @@
     },
     "require":
     {
-        "php": ">=7.3",
+        "php": ">=7.1",
         "composer/installers": ">=1.0.6",
         "davidbarratt/custom-installer": " 1.0.*@dev",
         "deliciousmedia/dm-muloader": "@dev",
