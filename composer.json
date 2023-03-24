@@ -61,7 +61,7 @@
     {
         "installer-paths":
         {
-          "wp-content/mu-plugins/{$name}/": [
+          "content/mu-plugins/{$name}/": [
                 "type:wordpress-muplugin",
                 "wpackagist-plugin/password-bcrypt",
                 "johnbillion/extended-cpts",
