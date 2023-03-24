@@ -1,7 +1,18 @@
 {
     "repositories":
-    {
-        "johnbillion/extended-cpts":
+      [
+       {
+        "type": "composer",
+        "url": "https://pivvenit.github.io/acf-composer-bridge/composer/v3/wordpress-plugin/"
+        },
+         {
+            "type":"composer",
+            "url":"https://wpackagist.org",
+            "only": [
+                "wpackagist-plugin/*",
+                "wpackagist-theme/*"
+            ]
+        },
         {
             "type": "package",
             "package":
@@ -13,11 +24,10 @@
                 {
                     "type": "git",
                     "url": "https://github.com/johnbillion/extended-cpts.git",
-                    "reference": "master"
+                    "reference": "trunk"
                 }
             }
         },
-        "deliciousmedia/dm-base":
         {
             "type": "package",
             "package":
@@ -32,60 +42,42 @@
                     "reference": "master"
                 }
             }
-        },
-        "acf-pro-installer":
-        {
-            "type": "package",
-            "package":
-            {
-                "name": "advanced-custom-fields/advanced-custom-fields-pro",
-                "version": "5.8.6",
-                "type": "wordpress-plugin",
-                "dist":
-                {
-                    "type": "zip",
-                    "url": "https://connect.advancedcustomfields.com/index.php?p=pro&a=download"
-                },
-                "require":
-                {
-                    "philippbaschke/acf-pro-installer": "^1.0"
-                }
-            }
         }
-    },
+    ],
     "require":
     {
-        "php": ">=7.1",
+        "php": ">=7.4",
         "composer/installers": ">=1.0.6",
-        "davidbarratt/custom-installer": " 1.0.*@dev",
+        "davidbarratt/custom-installer": "@dev",
         "deliciousmedia/dm-muloader": "@dev",
         "deliciousmedia/dm-base": "@dev",
-        "advanced-custom-fields/advanced-custom-fields-pro": "*",
+        "advanced-custom-fields/advanced-custom-fields-pro": "@stable",
         "johnbillion/extended-cpts": "@dev",
-        "wordpress-muplugin/password-bcrypt": "@dev",
-        "wordpress-plugin/mailgun": "@dev",
-        "wordpress-plugin/stream": "@dev"
+        "wpackagist-plugin/password-bcrypt": "@stable",
+        "wpackagist-plugin/mailgun": "@stable",
+        "wpackagist-plugin/stream": "@stable"
     },
     "extra":
     {
         "installer-paths":
         {
-            "content/plugins/{$name}/": ["type:wordpress-plugin"],
-            "content/mu-plugins/{$name}/": ["type:wordpress-muplugin"]
-        },
-        "composer-wp":
-        {
-            "path-mapping":
-            {
-                "wordpress-plugin": "content/plugins",
-                "wordpress-muplugin": "content/mu-plugins"
-            },
-            "mu-plugin-autoloader": false,
-            "repositories": [
-            {
-                "themes": false,
-                "wpcom-themes": false
-            }]
+          "wp-content/mu-plugins/{$name}/": [
+                "type:wordpress-muplugin",
+                "wpackagist-plugin/password-bcrypt",
+                "johnbillion/extended-cpts",
+                "deliciousmedia/dm-muloader",
+                "deliciousmedia/dm-base"
+            ],
+            "wp-content/plugins/{$name}/": [
+                "type:wordpress-plugin"
+            ]
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "composer/installers": true,
+            "pivvenit/acf-pro-installer": true,
+            "davidbarratt/custom-installer": true
         }
     }
 }
