@@ -68,7 +68,7 @@
                 "deliciousmedia/dm-muloader",
                 "deliciousmedia/dm-base"
             ],
-            "wp-content/plugins/{$name}/": [
+            "content/plugins/{$name}/": [
                 "type:wordpress-plugin"
             ]
         }
