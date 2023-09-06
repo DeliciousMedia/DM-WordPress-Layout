@@ -1,10 +1,10 @@
 {
     "repositories":
       [
-       {
-        "type": "composer",
-        "url": "https://pivvenit.github.io/acf-composer-bridge/composer/v3/wordpress-plugin/"
-        },
+		{
+			"type":"composer",
+			"url":"https://connect.advancedcustomfields.com"
+		},
          {
             "type":"composer",
             "url":"https://wpackagist.org",
@@ -51,11 +51,12 @@
         "davidbarratt/custom-installer": "@dev",
         "deliciousmedia/dm-muloader": "@dev",
         "deliciousmedia/dm-base": "@dev",
-        "advanced-custom-fields/advanced-custom-fields-pro": "@stable",
         "johnbillion/extended-cpts": "@dev",
         "wpackagist-plugin/password-bcrypt": "@stable",
         "wpackagist-plugin/mailgun": "@stable",
-        "wpackagist-plugin/stream": "@stable"
+        "wpackagist-plugin/stream": "@stable",
+    	"wpengine/advanced-custom-fields-pro": "*"
+
     },
     "extra":
     {
@@ -76,7 +77,6 @@
     "config": {
         "allow-plugins": {
             "composer/installers": true,
-            "pivvenit/acf-pro-installer": true,
             "davidbarratt/custom-installer": true
         }
     }
